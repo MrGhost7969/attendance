@@ -36,6 +36,7 @@ app.use(express.urlencoded({ extended: true }));
     const res2 = await dateRef.set({
       [name]: {'status': status}
     }, {merge: true})
+    console.log(res2)
     res.status(200).send("Successfully added")
   })
 
