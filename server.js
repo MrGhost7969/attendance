@@ -8,10 +8,6 @@ const path = require('path');
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }));
 
-
-
-
-
   app.get('/roster', (req, res) => {
     res.sendFile(path.join(__dirname, 'roster.html'));
   });
@@ -32,7 +28,15 @@ app.use(express.urlencoded({ extended: true }));
     res.sendFile(path.join(__dirname, 'entries.html'));
   });
 
-
-
+  app.post('/addstudent', async (req, res) => {
+    const name = req.body.name
+    const date = req.body.date
+    const status = req.body.status
+    const dateRef = db.collection('attendance').doc(date)
+    const res2 = await dateRef.set({
+      [name]: {'status': status}
+    }, {merge: true})
+    res.status(200).send("Successfully added")
+  })
 
 app.listen(port, () => console.log(`Server has started on port: ${port}`))

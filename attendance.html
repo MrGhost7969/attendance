@@ -1,4 +1,30 @@
-<html></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance</title>
+</head>
+<body>
+    <h2>Fill out form</h2>
+    <h3>Attendance</h3>
+    <form action="/addstudent" method="POST">
+        <div style="flex-direction: row;">
+            <label for="inputFirst">First name</label>
+            <input type="text" id="inputFirst" class="form-control" name="name" placeholder="First Name"/>    
+        </div>
+        <div style="flex-direction: row;">
+            <label for="inputEmail">Date</label>
+            <input type="text" id="inputEmail" class="form-control" name="date" placeholder="Email"/>    
+        </div>
+        <div style="flex-direction: row;">
+            <label for="inputStatus">Status</label>
+            <input type="text" id="inputStatus" class="form-control" name="status" placeholder="Email"/>    
+        </div>
+        <button type="submit" value="submit">Submit</button>
+    </form>
+</body>
+</html>
 
  
 
